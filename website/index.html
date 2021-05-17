@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Counting the runs!</title>
+    <script src="logic.js"></script>
 </head>
 <body>
     <h1>Distance counting!</h1>
@@ -10,36 +11,7 @@
     <h2>Current no of kms:</h2>
     <h1 id="distance">0</h1>
 
-    <button id="add-button">Add 1km.</button>
-    <button id="dec-button">Remove 1km.</button>
-
-    <script>
-        const endpoint = "localhost:5000"
-        function setCount(route) {
-            let resp = fetch("http://"+endpoint+"/"+route);
-
-            if (resp.ok) { // if HTTP-status is 200-299
-            // get the resp body (the method explained below)
-            let json = resp.json();
-            } else {
-            alert("HTTP-Error: " + resp.status);
-            }
-
-            document.getElementById("distance").innerHTML = json["count"];
-        }
-        
-        $(document).ready(function(){
-        function addCount() {
-            setCount("increase");
-        }
-
-        function removeCount() {
-            setCount("decrease")
-        }
-
-        $("#add-button").click(addCount);
-        $("#dec-button").click(removeCount);
-    });
-    </script>
+    <button onclick="addCount()">Add 1km.</button>
+    <button onclick="removeCount()">Remove 1km.</button>
 </body>
 </html>
