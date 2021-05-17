@@ -3,6 +3,12 @@
 <head>
     <title>Counting the runs!</title>
     <script src="logic.js"></script>
+    <style>
+        .counts {
+            height:200px;
+            width:200px;
+        }
+    </style>
 </head>
 <body>
     <h1>Distance counting!</h1>
@@ -11,7 +17,7 @@
     <h2>Current no of kms:</h2>
     <h1 id="distance">0</h1>
 
-    <button onclick="addCount()">Add 1km.</button>
-    <button onclick="removeCount()">Remove 1km.</button>
+    <button class="counts" onclick="addCount()">Add 1km.</button>
+    <button class="counts" onclick="removeCount()">Remove 1km.</button>
 </body>
 </html>
