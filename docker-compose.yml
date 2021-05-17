@@ -1,12 +1,12 @@
 version: '2'
-services: 
+services:
     api:
         image: aoteamaersk/counter-api
-        ports: 
+        ports:
             - 5000:5000
-        volumes: 
+        volumes:
             - ./values:/app/values
     site:
         image: aoteamaersk/counter-site
-        ports: 
+        ports:
             - 80:80
