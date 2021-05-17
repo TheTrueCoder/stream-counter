@@ -28,7 +28,7 @@ def changeval(change_val):
         f.write(str(result))
         f.truncate()
 
-        return (result)
+        return result
 
 @app.route("/increase")
 def increase():
