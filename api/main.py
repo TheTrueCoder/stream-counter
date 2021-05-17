@@ -26,7 +26,6 @@ def changeval(change_val):
 
         f.seek(0)
         f.write(str(result))
-        f.truncate()
 
         return result
 
@@ -37,5 +36,3 @@ def increase():
 @app.route("/decrease")
 def decrease():
     return str(changeval(-1))
-
-# print(changeval(1))
