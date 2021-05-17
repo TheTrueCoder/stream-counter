@@ -1,0 +1,9 @@
+FROM python:alpine
+
+WORKDIR /app
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY main.py /app/
+ENV FLASK_APP=main.py
+CMD [ "flask", "run", "--host=0.0.0.0" ]
