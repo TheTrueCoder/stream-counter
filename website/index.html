@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Distance counting!</h1>
-    <p>Press +1 to add a km and -1 to remove one in case you made an error.</p>
+    <div id="main-container">
+        <h1>Distance counting!</h1>
+        <p>Press +1 to add a km and -1 to remove one in case you made an error.</p>
 
-    <h2>Current no of kms:</h2>
-    <h1 id="distance">0</h1>
+        <h2>Current no of kms:</h2>
+        <h1 id="distance">0</h1>
 
-    <div class="btn-group">
-        <button onclick="addCount()">Add 1km.</button>
-        <button onclick="removeCount()">Remove 1km.</button>
+        <div class="btn-group">
+            <button onclick="addCount()">Add 1km.</button>
+            <button onclick="removeCount()">Remove 1km.</button>
+        </div>
     </div>
 </body>
 </html>
