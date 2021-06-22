@@ -12,6 +12,12 @@ f = open(value_path, "w")
 f.close()
 del(f)
 
+def writefile(path, val):
+    with open(path, "w+") as f:
+        f.seek(0)
+        f.truncate()
+        f.write(str(val))
+
 def changeval(change_val):
     with open(value_path, "r+") as f:
         try:
