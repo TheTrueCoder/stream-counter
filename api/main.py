@@ -20,7 +20,7 @@ def writefile(path, val):
 
 def readfile(path):
     with open(path, "r") as f:
-        return f.read
+        return f.read()
 
 def changeval(change_val):
     og_val = readfile(value_path)
