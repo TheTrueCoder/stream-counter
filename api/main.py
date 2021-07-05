@@ -18,22 +18,24 @@ def writefile(path, val):
         f.truncate()
         f.write(str(val))
 
+def readfile(path):
+    with open(path, "r") as f:
+        return f.read
+
 def changeval(change_val):
-    with open(value_path, "r+") as f:
-        try:
-            x = int(f.read())
-        except:
-            x = 0
-        y = int(change_val)
-        result = x+y
-
-        if result < 0:
-            result = 0
-
-        f.seek(0)
-        f.write(str(result))
-
-        return result
+    og_val = readfile(value_path)
+    try:
+        x = int(og_val)
+    except:
+        x = 0
+    
+    y = int(change_val)
+    result = x+y
+    if result < 0:
+        result = 0
+    
+    writefile(value_path, result)
+    return result
 
 @app.route("/increase")
 def increase():
